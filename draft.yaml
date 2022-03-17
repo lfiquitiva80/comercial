@@ -1,0 +1,19 @@
+models:
+  Exercise:
+    year_id: id foreign:years.id
+    month_id: id foreign:months.id
+    client_id: id foreign:clients.id
+    direccion: string:10
+    ciudad: string:20
+    observaciones: text
+    latitude: string:10
+    longitude: string:10
+    map: string:50
+    user_id: id foreign
+    
+
+controllers:
+  Exercise:
+    resource
+
+seeders: Exercise

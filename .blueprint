@@ -1,0 +1,32 @@
+created:
+    - app/Http/Controllers/ExerciseController.php
+    - database/factories/ExerciseFactory.php
+    - database/migrations/2021_10_22_142051_create_exercises_table.php
+    - app/Models/Exercise.php
+    - database/seeders/ExerciseSeeder.php
+    - tests/Feature/Http/Controllers/ExerciseControllerTest.php
+    - app/Http/Requests/ExerciseStoreRequest.php
+    - app/Http/Requests/ExerciseUpdateRequest.php
+    - resources/views/exercise/index.blade.php
+    - resources/views/exercise/create.blade.php
+    - resources/views/exercise/show.blade.php
+    - resources/views/exercise/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Models\Brand: { marca: string }
+    Models\Category: { categoria: string }
+    Models\Channel: { canal: string }
+    Models\Chief: { jefes: string }
+    Models\Client: { cliente: string }
+    Models\Line: { linea: string, category_id: 'biginteger unsigned' }
+    Models\Maker: { fabricante: string }
+    Models\Month: { mes: string }
+    Models\Parameterization: { client_id: 'biginteger unsigned', region_id: 'biginteger unsigned', channel_id: 'biginteger unsigned', seller_id: 'biginteger unsigned', observaciones: text }
+    Models\Presentation: { presentacion: string }
+    Models\Region: { region: string }
+    Models\Seller: { vendedores: string, chief_id: 'biginteger unsigned default:1' }
+    Models\User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Models\Year: { anio: string }
+    Product: { year_id: 'id foreign:years.id', month_id: 'id foreign:months.id', client_id: 'id foreign:clients.id', line_id: 'id foreign:lines.id', marker_id: 'id foreign:markers.id', brand_id: 'id foreign:brands.id', presentation_id: 'id foreign:presentations.id', precio_iva: 'id foreign:precio_iva.id', observaciones: text, user_id: 'id foreign' }
+    Exercise: { year_id: 'id foreign:years.id', month_id: 'id foreign:months.id', client_id: 'id foreign:clients.id', direccion: 'string:10', ciudad: 'string:20', observaciones: text, latitude: 'string:10', longitude: 'string:10', map: 'string:50', user_id: 'id foreign' }
